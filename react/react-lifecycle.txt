@@ -1,0 +1,109 @@
+
+
+
+
+Mounting
+
+
+Updating
+
+
+Unmounting
+Render Phase
+
+
+
+
+New Props
+setState()
+forceUpdate()
+
+
+
+
+
+
+constructor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+getDerivedStateFromProps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+shouldComponentUpdate
+
+
+
+
+
+
+
+
+render
+
+
+
+
+Pre-Commit Phase
+
+
+
+
+getSnapshotBeforeUpdate
+
+
+
+
+Commit Phase
+React updates DOM and references
+
+
+
+
+
+
+componentDidMount
+
+
+componentDidUpdate
+
+
+componentWillUnmount
+Mounting Phase
+1. Constructor function is called and state data is initialized
+2. We can receive props and place them on our component as state
+3. Render is then invoked and our JSX elements are transformed into DOM elements
+4. After render is called, componentDidMount will be invoked
+
+
+v = fn(s) || View is a function of state
+v = What the user sees and interacts with on our web pages
+fn = Component or class that contains or encapsulates our data and our view
+s = Data that our view will be represented by our view
+
+
+Constructor
+* Loads in initial state data
