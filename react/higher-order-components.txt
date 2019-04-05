@@ -1,0 +1,50 @@
+* A components that receives another component as it's argument
+* A container to potentially perform "higher level logic"
+* Used to share logic or functionality between components
+* Each component mounted by way of HOC is it's own stateful component
+
+
+Higher Order Function Examples
+Note: Every method or function that receives a function as an argument is a higher order function
+Array.map()
+Array.filter()
+Array.reduce()
+
+
+Example:
+const higherOrderComponent = Component =>
+    class extends React.Component {
+        constructor() {
+            super();
+            this.state = {
+                text: "Higher Order Component",
+                counter: 0
+            }
+        }
+        increment = () =>
+            this.setState(prevState => {
+                return {
+                    counter: prevState.counter + 1
+                }
+            })
+        render = () =>
+            <Component
+                text={this.state.text}
+                count={this.state.counter}
+                increment={this.increment}
+            />
+    }
+
+
+const ComponentOne = props => (<h1>{props.text} {props.count}</h1>)
+const ComponentTwo = props => (<button onClick={props.increment}>{props.text} {props.count}</button>)
+const HOCComponentOne = higherOrderComponent(ComponentOne)
+const HOCComponentTwo = higherOrderComponent(ComponentTwo)
+function App() {
+    return (
+        <div className="App">
+            <HOCComponentOne />
+            <HOCComponentTwo /> //This button will only increment it's own counter on click
+        </div>
+    );
+}
