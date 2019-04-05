@@ -1,0 +1,21 @@
+Installing
+npm install --save styled-components
+
+
+Importing
+import styled from 'styled-components'
+
+
+Example
+function Parent = () =>
+    <div>
+        <Component type='primary'/>
+    </div>
+const Component = styled.div`
+  display: flex;
+  margin: 0 10px;
+  font-size: 4.2rem;
+
+
+  ${props => (props.type === 'primary' ? 'background: #424242' : null)}
+`
