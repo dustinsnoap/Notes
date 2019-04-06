@@ -1,5 +1,6 @@
 Installing
 npm install --save styled-components
+yarn add styled-components
 
 
 Importing
@@ -19,3 +20,30 @@ const Component = styled.div`
 
   ${props => (props.type === 'primary' ? 'background: #424242' : null)}
 `
+
+
+Global Styles
+Importing
+import { createGlobalStyle } from "styled-components"
+Example
+const GlobalStyle = createGlobalStyle`
+  #root {
+    display: flex;
+  }
+`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
