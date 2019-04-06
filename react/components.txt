@@ -1,0 +1,32 @@
+ A component is a function or class that takes in an arbitrary parameter called "props" or "properties"
+
+
+Functional Component
+Example
+const Functional = ({prop}) =>
+    <div className='content'>
+        <h1>I'm a Function Component!</h1>
+    </div>
+
+
+Class Component
+Importing
+import {Component} from 'react'
+
+
+Example
+class Comments extends Component {
+    constructor({props) {
+        super()
+        this.state = {
+            state_variable: 'some text',
+        }
+    }
+    some_method = variable =>
+        console.log(variable)
+    render() {
+        return (
+            <h1>{this.state.state_variable}</h1>
+        )
+    }
+}
