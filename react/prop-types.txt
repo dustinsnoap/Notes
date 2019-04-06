@@ -1,0 +1,91 @@
+https://reactjs.org/docs/typechecking-with-proptypes.html
+
+
+Ensures the users is using the correct type of data
+Only runs in development, not in production
+
+
+Installing
+npm install --save prop-types
+
+
+Importing
+import proptypes from 'prop-types'
+
+
+Types
+Number
+1,2,3,4,5,....n
+Boolean
+true, false
+String
+'words',"words",`words`
+Object
+{name: 'Bob Burger'},[1,'foo']
+Undefined
+undefined
+Null
+null
+Symbol
+an object of a specific shape
+Example
+parent.js
+const data = [{ number: 1, string: "string", bool: true, array: [1, 2, 3] }]
+
+
+const Parent = () => <Child data={data} />
+child.js
+import React from "react"
+import proptypes from "prop-types"
+
+
+const Child = props => <h1>{props.string}</h1>
+
+
+export default Child
+
+
+Component.propType = {
+  data: proptypes.shape({
+    number: proptypes.number.isRequired, //display warning if not provided
+    string: proptypes.string,
+    bool: proptypes.bool,
+    array: proptypes.arrayOf(proptypes.number)
+  }),
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
